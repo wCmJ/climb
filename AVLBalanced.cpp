@@ -36,3 +36,11 @@ bool IsBalanced(BST* root)
     return IsBalanced(root, &depth);
 }
 
+int TreeDepth(BST* root)
+{
+    if(root == NULL)
+        return 0;
+    int left = TreeDepth(root->left);
+    int right = TreeDepth(root->right);
+    return left > right ? left + 1 : right + 1;    
+}
